@@ -1,16 +1,23 @@
+/* Maximum possible length of output from block, expressed in number of characters. */
 #define CMDLENGTH 45
-#define DELIMITER "  "
-#define CLICKABLE_BLOCKS
+
+/* The status bar's delimiter which appears in between each block. */
+#define DELIMITER " │ "
 
 const Block blocks[] = {
-	BLOCK("sb-mail",    1800, 17),
-	BLOCK("sb-music",   0,    18),
-	BLOCK("sb-disk",    1800, 19),
-	BLOCK("sb-memory",  10,   20),
-	BLOCK("sb-loadavg", 5,    21),
-	BLOCK("sb-mic",     0,    26),
-	BLOCK("sb-record",  0,    27),
-	BLOCK("sb-volume",  0,    22),
-	BLOCK("sb-battery", 5,    23),
-	BLOCK("sb-date",    1,    24)
+    /*Command             Interval            Signal*/
+    BLOCK("cat /tmp/recordingicon 2>/dev/null",  0,  9),
+    BLOCK("music",        0,                  11),
+    BLOCK("pacpackages",  0,                  8),
+    BLOCK("memory",       10,                 14),
+    BLOCK("cpu",          10,                 18),
+    /* BLOCK("disk",         10800,              6), */
+    BLOCK("bright",       0,                  19),
+    /* BLOCK("moonphase",    18000,              17), */
+    /* BLOCK("weather",      18000,              5), */
+    /* BLOCK("mailbox",      180,                12), */
+    BLOCK("volume",       0,                  10),
+    BLOCK("battery",      5,                  3),
+    BLOCK("internet",     5,                  4),
+    BLOCK("clock",        1,                  1)
 };
