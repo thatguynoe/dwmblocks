@@ -17,7 +17,7 @@
 #define TRAILING_DELIMITER 0
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
-#define BLOCKS(X)                                        \
+#define BLOCKS(X)                                       \
     X("", "cat /tmp/recordingicon 2>/dev/null",  0,  9) \
     X("", "music",        0,                  11)       \
     X("", "pacpackages",  0,                  8)        \
