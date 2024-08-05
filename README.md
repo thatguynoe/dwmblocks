@@ -4,7 +4,6 @@ A [`dwm`](https://dwm.suckless.org) status bar that has a modular, async design,
 
 ## Features
 
-- [Clickable](#clickable-blocks)
 - Loaded asynchronously
 - [Updates can be externally triggered](#signalling-changes)
 - Compatible with `i3blocks` scripts
@@ -73,9 +72,6 @@ Apart from defining the blocks, features can be toggled through `config.h`:
 // Maximum number of Unicode characters that a block can output.
 #define MAX_BLOCK_OUTPUT_LENGTH 45
 
-// Control whether blocks are clickable.
-#define CLICKABLE_BLOCKS 0
-
 // Control whether a leading delimiter should be prepended to the status.
 #define LEADING_DELIMITER 0
 
@@ -99,20 +95,3 @@ To refresh all the blocks, run `kill -10 $(pidof dwmblocks)` or
 `pkill -SIGUSR1 dwmblocks`.
 
 > All blocks must have different signal numbers!
-
-### Clickable blocks
-
-Like `i3blocks`, this build allows you to build in additional actions into your
-scripts in response to click events. You can check out
-[my status bar scripts](https://github.com/UtkarshVerma/dotfiles/tree/main/.local/bin/statusbar)
-as references for using the `$BLOCK_BUTTON` variable.
-
-To use this feature, define the `CLICKABLE_BLOCKS` feature macro in your
-`config.h`:
-
-```c
-#define CLICKABLE_BLOCKS 1
-```
-
-Apart from that, you need `dwm` to be patched with
-[statuscmd](https://dwm.suckless.org/patches/statuscmd/).
